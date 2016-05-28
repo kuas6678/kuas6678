@@ -2,3 +2,6 @@
 Welcome~ This is my personal website.
 
 ![莊英澔](http://azurewebapplicationkuas6678.azurewebsites.net/images/Hao.jpg)
+
+我的作品連結
+http://azurewebapplicationkuas6678.azurewebsites.net/blog.aspx
