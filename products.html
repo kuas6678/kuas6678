@@ -68,18 +68,24 @@
     </style>
 
     <script>
+        //jQuery Event Handlers
         $(document).ready(function () {
             $('input').addClass('line');
             $('#BMWLAB h5').addClass('hidden');
             $('#switcher').click(function () {
                 if ($(event.target).is('input')) {
-                    var className = event.target.id; 
+                    var className = event.target.id; //若為input元素，則取得樣式類別名稱
                     $('#switcher input').removeClass('selected');
                     $(event.target).addClass('selected');
-                    event.stopPropagation(); 
+                    event.stopPropagation(); //停止將事件傳遞至DOM樹上一層元素，避免重複處理
                 }
             });
-           
+            
+            //$('.list').click(function(event){
+            //    event.preventDefault();   // 阻擋超連結a元素的預設行為         
+            //});
+            
+            // mouseenter & mouseleave
             jQuery('.list').mouseenter(function () {
                 $(this).addClass('bgcolor');
             }).mouseleave(function () {
@@ -100,6 +106,7 @@
                     isHidden = true;
                 }
             });
+            // slide effects
             $('#Slide').click(function () {
                 if ($('.KK').is(':hidden'))
                     $('.KK').slideDown('200');
@@ -107,6 +114,7 @@
                     $('.KK').slideUp('200');
                 return false;
             });
+            // fadeIn & fadeOut effects
             $('p.more').hide();
             $('a.short').hide();
             $('a.more').click(function () {
@@ -119,11 +127,13 @@
                 $('p.more').fadeToggle('1500');
                 return false;
             });
+            //change transparent
             $("address").mouseenter(function () {
                 $(this).fadeTo("slow", Math.random());
             }).mouseleave(function () {
                 $(this).fadeTo("slow", 1);
             });
+            // focus & blur
             $('#search').focus(function () {
                 $(this).addClass('focus');
             }).blur(function () {
@@ -131,6 +141,7 @@
             });
 
             $('#Default').bind('click', function () {
+                // Same as $('#Default').click(function(){ });
                 $('body').toggleClass('bgcolor');
             });
             $('#PP').click(function () {
@@ -152,6 +163,7 @@
             });
 
         });
+        //W3Schools timing_clock example
         function startTime() {
             var today = new Date();
             var h = today.getHours();
@@ -164,7 +176,7 @@
             var t = setTimeout(startTime, 500);
         }
         function checkTime(i) {
-            if (i < 10) { i = "0" + i };  
+            if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
             return i;
         }
     </script>
@@ -215,6 +227,7 @@
             <div id="alpha">
                 <div class="entry">
                     <div align="left">
+                        <!--  <img src="images/subject.jpg" alt="subject" width="300" height="425" /> -->
                         <br />
                         <p style="text-align: center; font-size: 18px; font-weight: bold; color: blue;">以藍牙定位實現具即時跌倒通報之銀髮族照護系統</p>
                         <p style="text-align: center; font-size: 14px; font-weight: bold;">指導教授: 黃文祥&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;組員: 莊英澔、陳柏安、陳人涵</p>
@@ -262,13 +275,13 @@
                     <fieldset style="border-color: #99ffff;">
                         <legend style="font-size: 20px; color: #191970; text-align: center;"><b id="creation">個人創作區</b></legend>
                         <ol>
-                            <li>◆<a class="list" target="_blank" href="http://203.64.102.131/bmwlab/">銀髮族照護系統</a></li>
-                            <li>◆<a class="list" target="_blank" href="http://203.64.102.177/TSQL">TSQL語法練習</a></li>
-                            <li>◆<a class="list" target="_blank" href="http://203.64.102.177/autocomplete">Using jQuery AutoComplete TextBox</a></li>
-                            <li>◆<a class="list" target="_blank" href="http://203.64.102.177/download">資源下載區</a></li>
-                            <li>◆<a class="list" target="_blank" href="http://203.64.102.177/jQuerymobile">銀髮族照護系統(手機板)</a></li>
-                            <li>◆<a class="list" target="_blank" href="http://203.64.102.177/jsonp/default2.aspx">Open Data紫外線即時監測資料</a></li>
-							<li>◆<a class="list" target="_blank" href="http://203.64.102.234:80">Power by Node.js Blog-System</a></li>
+                            <li>◆<a class="list" target="_blank" href="http://azurewebapplicationkuas6678.azurewebsites.net/blog.aspx">&nbsp;部落格系統</a></li>
+                            <li>◆<a class="list" target="_blank" href="http://azurewebapplicationkuas6678.azurewebsites.net/Vote_Auto_List.aspx">&nbsp;投票系統</a></li>
+                            <li>◆<a class="list" target="_blank" href="http://azurewebapplicationkuas6678.azurewebsites.net/FileUpload_DB_List.aspx">&nbsp;網路商城首頁</a></li>
+                            <li>◆<a class="list" target="_blank" href="http://azurewebapplicationkuas6678.azurewebsites.net/home.aspx">&nbsp;空氣品質即時污染指標</a></li>
+                            <li>◆<a class="list" target="_blank" href="http://azurewebapplicationkuas6678.azurewebsites.net/ChatRoom.aspx">&nbsp;聊天室</a></li>
+                            <li>◆<a class="list" target="_blank" href="http://azurewebapplicationkuas6678.azurewebsites.net/XYZ.aspx">&nbsp;Fackbook網頁設計</a></li>
+							<li>◆<a class="list" target="_blank" href="https://github.com/kuas6678">&nbsp;更多在Github上的作品</a></li>
                         </ol>
                     </fieldset>
                 </div>
@@ -285,7 +298,7 @@
                     <ul class="KK">
                         <li>
                             <a href="http://www.kuas.edu.tw/bin/home.php">
-                                <img src="images/KUAS.bmp" alt="" width="60" height="60" />
+                                <img src="images/Kuas_png.png" alt="" width="60" height="60" />
                                 National Kaohsiung University of Applied Sciences <span class="published">05 Jul 2015</span>
                             </a>
                         </li>
@@ -412,7 +425,7 @@
         </div>
         <div id="footer">
             <div id="footer-inner">
-				<address>Copyright &copy; Ying Hao Chuang. All Rights Reserved.</address>
+				<address>Power by <a style="color: white; font-size: 13px; font-weight: bold; text-decoration:underline;" href="https://nodejs.org/en/" target="_blank">Node.js</a> WebServer<br />Copyright &copy; Ying Hao Chuang. All Rights Reserved.</address>
                 <!--/#footer-inner-->
             </div>
             <!--/#footer-->

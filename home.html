@@ -52,7 +52,7 @@
         }
 
         .focus {
-            border: 1px solid #00FFFF;
+            border: 1px solid #00FFFF; 
         }
 
         .border-radius {
@@ -61,18 +61,20 @@
     </style>
 
     <script>
+        //jQuery Event Handlers
         $(document).ready(function () {
             $('input').addClass('line');
             $('#BMWLAB h5').addClass('hidden');
             $('#switcher').click(function () {
                 if ($(event.target).is('input')) {
-                    var className = event.target.id;
+                    var className = event.target.id; //若為input元素，則取得樣式類別名稱
                     $('#switcher input').removeClass('selected');
                     $(event.target).addClass('selected');
-                    event.stopPropagation(); 
+                    event.stopPropagation(); //停止將事件傳遞至DOM樹上一層元素，避免重複處理
                 }
             });
 
+            // mouseenter & mouseleave
             $('input').mouseenter(function () {
                 $(this).addClass('bgcolor');
             }).mouseleave(function () {
@@ -85,16 +87,17 @@
                     $('#BMWLAB h5').removeClass('hidden');
                     $('#BMWLAB h5').append('<h5 id="line" class="QQ2">—————————————————————————————————————————————</h5>');
                     isHidden = false;
-                    changeText();  
+                    changeText();  //更改標題文字
                 }
                 else {
                     $("h5 #line").remove('.QQ2');
                     $('#BMWLAB h5').addClass('hidden');
                     isHidden = true;
-                    restore(); 
+                    restore();  //更改作者文字
                 }
             });
 
+            // slide effects
             $('#Slide').click(function () {
                 if ($('.KK').is(':hidden'))
                     $('.KK').slideDown('200');
@@ -103,6 +106,7 @@
                 return false;
             });
 
+            // fadeIn & fadeOut effects
             $('p.more').hide();
             $('a.short').hide();
             $('a.more').click(function () {
@@ -121,12 +125,14 @@
                 return false;
             });
 
+            //change transparent
             $("address").mouseenter(function () {
                 $(this).fadeTo("slow", Math.random());
             }).mouseleave(function () {
                 $(this).fadeTo("slow", 1);
             });
 
+            // focus & blur
             $('#search').focus(function () {
                 $(this).addClass('focus');
             }).blur(function () {
@@ -134,6 +140,7 @@
             });
 
             $('#Default').bind('click', function () {
+                // Same as $('#Default').click(function(){ });
                 $('body').toggleClass('bgcolor');
             });
             $('#PP').click(function () {
@@ -162,6 +169,7 @@
             $('#BMICal').hide(100);
         }
 
+        //W3Schools timing_clock example
         function startTime() {
             var today = new Date();
             var h = today.getHours();
@@ -175,7 +183,7 @@
         }
 
         function checkTime(i) {
-            if (i < 10) { i = "0" + i };  
+            if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
             return i;
         }
 
@@ -196,6 +204,9 @@
             }
 
             finally {
+                //數值、字串和布林預設使用『傳值』方式;
+                //物件、陣列、函數和字串物件預設使用『傳址』參數，檢查內容相等加上.toString()
+                //if (obj2.toString() == obj1.toString()) {
                 if (obj2.valueOf() == obj1.valueOf()) {
                     alert("OK");
                     $('#BMICal').show("slow");
@@ -209,8 +220,10 @@
             }
         }
 
+        //var op;
         function total() {
             var Tags = "";
+            //在函數內不宣告的變數視同全域變數，如下i變數。
             for (this.op = 0; op < total.arguments.length; op++) {
                 Tags += "、" + total.arguments[op];
             }
@@ -220,17 +233,18 @@
 
         function changeText() {
             var a = document.getElementsByTagName("a");
-            var objEle = a.item(6); 
-            objEle.innerHTML = "自我介紹 " + "(" + objEle.nodeName + " " + objEle.nodeType + ")"; 
+            var objEle = a.item(6); //第6個<a>標籤
+            objEle.innerHTML = "自我介紹 " + "(" + objEle.nodeName + " " + objEle.nodeType + ")";  //nodeType =  1: 標籤, 2:屬性, 3:文字節點
             var author = document.getElementById("author");
             author.innerHTML = "<b>莊英澔 " + "(" + author.nodeName + " " + author.nodeType + ")</b>";
         }
 
         function restore() {
             var a = document.getElementsByTagName("a");
-            var objEle = a[6]; 
+            var objEle = a[6]; //與使用item()方法功能相同
             objEle.innerHTML = "Personal Statement";
             var author = document.getElementById("author");
+            //innerText為取代文字內容
             author.innerText = "<b>Ying Hao Chuang</b>";
         }
 
@@ -312,8 +326,8 @@
                         <div id="QQ" class="entry-content">
                             <p class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;學生莊英澔，出生於桃園市。父親從事服務業工作，母親則是家管，家裡除了父母之外，還有一位在工作的姊姊和一位大我一歲的哥哥，家中的教養態度向來都是採取民主的方式，希望我們養成獨立自主的習慣，因此從小父母尊重我的看法和決定，也給予我適時的協助，讓我有空間自主和負責。</p>
                             <p class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在求學的歷程中，選讀的科系與方向始終非常明確，因為從小就喜歡與電器有關的東西，時常把家裡的電器類的東西拆開來研究，升高中時，在自身的努力下考上龍潭農工電機科，在班上擔任過許多班級幹部，如:班長、學藝、衛生股長等等，對於學習處理事情的責任與態度和與人溝通協調的能力都成長了不少，除此之外，也製作單晶片微電腦自動控制繞線機之研製專題，在整體的專題製作規劃中，不僅統整高職三年所學的電機領域課程知識，也獲得了課本沒有教的知識，是製作專題時的額外收穫。</p>
-                            <p class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高職畢業後我進入國立高雄應用科技大學電機工程系就讀，學校裡優秀的師資人才眾多，在課業方面我要求自己，各學科均衡發展，並保持應有的水準，入學期間受惠於系上教授的教導，歷年來每學期的學業總成績不僅維持於一定的水準之上，並持續進步中，三年以來已拿到五張書卷獎，同時在黃文祥教授的指導下，參與科技部104年度大專學生研究計畫「以hBeacon為基礎的銀髮族照護系統之研製 - 老人跌倒通報為例」，以及由工研院與聯發科技(MediaTek Labs)共同主辦的「2015通訊大賽─聯發科技物聯網/穿戴式創客競賽」，雖然研究計畫的執行過程當中碰到了許多的難題，但並未削減我對這方面領域的興趣，更主動去借閱相關的專業書籍找尋解決方法，加上在微處理機課程中所學的程式設計經驗、計算機網路課程知識以及活用電子學實習所學的硬體電路製作，做進一步的研究與探討，並且透過同學間互相學習討論，能夠彙整出問題的不同解決方法，思考問題的最佳解答，從中磨練自己學習解決問題的能力，對於提升自己的思辨能力有很大的幫助。 </p>
-                            <p class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;研究計畫執行過程中，不僅接觸到課業以外的知識，也讓我獲得許多解決問題的寶貴經驗，學習到以不同的角度去規劃系統的設計，每一次遇上的難題解決後所獲得的成就感與樂趣，更加深了我對此領域有進一步深造的動機。我的個性內斂謹慎，做事細心負責，在團體間的配合度高，容易得到同學與朋友間的信賴，凡事認真的聽別人講話，清楚對方想表達的意思，使我更具有親合力，並能圓滿的化解衝突。在高應大三年來的日子，我廣泛涉獵資訊相關領域的知識，努力打穩自己的基礎，未來更期許自己能夠擁有更專業的資訊長才，相信我積極向上、努力求學的心，能夠在求學路途中不斷成長突破。</p>
+                            <p class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高職畢業後我進入國立高雄應用科技大學電機工程系就讀，學校裡優秀的師資人才眾多，在課業方面我要求自己，各學科均衡發展，並保持應有的水準，入學期間受惠於系上教授的教導，歷年來每學期的學業總成績維持於前三名的水準上，就學期間以來得到六張書卷獎的鼓勵，也在資通組黃文祥教授的指導下，參與科技部104年度大專學生研究計畫「以hBeacon為基礎的銀髮族照護系統之研製 - 老人跌倒通報為例」，以及由工研院與聯發科技(MediaTek Labs)共同主辦的「2015通訊大賽─聯發科技物聯網/穿戴式創客競賽」，雖然研究計畫的執行過程當中碰到了許多的難題，但並未削減我對這方面領域的興趣，更主動去借閱相關的專業書籍找尋解決方法，加上在微處理機課程中所學的程式設計經驗、計算機網路課程知識以及活用電子學實習所學的硬體電路製作，做進一步的研究與探討，並且透過同學間互相學習討論，能夠彙整出問題的不同解決方法，思考問題的最佳解答，從中磨練自己學習解決問題的能力，對於提升自己的思辨能力有很大的幫助。 </p>
+                            <p class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;研究計畫執行過程中，不僅接觸到課業以外的知識，也讓我獲得許多解決問題的寶貴經驗，學習到以不同的角度去規劃系統的設計，每一次遇上的難題解決後所獲得的成就感與樂趣，更加深了我對此領域有進一步深造的動機。我的個性內斂謹慎，做事細心負責，在團體間的配合度高，容易得到同學與朋友間的信賴，凡事認真的聽別人講話，清楚對方想表達的意思，使我更具有親合力，並能圓滿的化解衝突。在高應大四年以來的日子，我廣泛的涉獵資訊相關領域的知識，努力打穩自己的基礎，未來更期許自己能夠擁有更專業的資訊長才，相信我積極向上、努力求學的心，能夠在求學路途中不斷成長突破。</p>
                         </div>
                         <div id="BMICal">
                             <label for="height">身高(公分): </label>
@@ -339,7 +353,7 @@
                     <ul class="KK">
                         <li>
                             <a href="http://www.kuas.edu.tw/bin/home.php">
-                                <img src="images/KUAS.bmp" alt="" width="60" height="60" />
+                                <img src="images/Kuas_png.png" alt="" width="60" height="60" />
                                 National Kaohsiung University of Applied Sciences <span class="published">05 Jul 2015</span>
                             </a>
                         </li>
@@ -409,6 +423,7 @@
                             var Tags = null;
                             Tags = total("C", "C++", "C#", "Python", "Java", "HTML5", "ASP.NET", "CSS", "MS SQL", "JavaScript", "Bootstrap", "XML", "JSON", "Ajax", "jQuery", "GitHub", "jQuery Mobile", "Node.js", "Android", "Arduino");
                             $("#BMWLAB h5 p").html(Tags + "<br/><br/>total: " + op);
+                            // document.getElementById("ww").innerHTML = Tags;
                         });
                     });
                 </script>
