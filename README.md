@@ -6,5 +6,11 @@ Welcome~ This is my personal website.
 我的個人網站
 http://kuas6678.github.io/kuas6678/home.html
 
-我的作品連結
+ASP.NET Web Forms 作品連結
 http://azurewebapplicationkuas6678.azurewebsites.net/blog.aspx
+
+ASP.NET MVC 作品連結
+https://blogapplication.azurewebsites.net/Test
+
+AngularJS 練習
+https://kuas6678.github.io/AngularJS-With-Web-API/
