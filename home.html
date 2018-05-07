@@ -86,7 +86,9 @@
             $('#KUAS').click(function() {
                 if (isHidden) {
                     $('#BMWLAB h5').removeClass('hidden');
-                    $('#BMWLAB h5').append('<h5 id="line" class="QQ2">—————————————————————————————————————————————</h5>');
+                    $('#BMWLAB h5').append(
+                        '<h5 id="line" class="QQ2">—————————————————————————————————————————————</h5>'
+                    );
                     isHidden = false;
                     changeText(); //更改標題文字
                 } else {
@@ -159,7 +161,8 @@
             $('#span_date').click(function() {
                 var now = new Date();
                 var weekday = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
-                var str_NowDate = (now.getFullYear()) + "/" + (now.getMonth() + 1) + "/" + now.getDate() + " " + weekday[now.getDay()];
+                var str_NowDate = (now.getFullYear()) + "/" + (now.getMonth() + 1) + "/" + now.getDate() +
+                    " " + weekday[now.getDay()];
                 $("#span_date").html(str_NowDate).css('font-size', '14px');
             });
 
@@ -320,23 +323,33 @@
                             <input id="Default" type="button" value="背景" />
                             <input id="Wiki" type="button" onclick="setPreset()" value="預設" />
                         </div>
-                        <h2><a>Personal Statement</a><br /><span id="author" class="auto-style2">Ying Hao Chuang</span></h2>
-                        <p class="entry-date">10 Oct <span class="year">2015</span></p>
+                        <h2>
+                            <a>Personal Statement</a>
+                            <br />
+                            <span id="author" class="auto-style2">Ying Hao Chuang</span>
+                        </h2>
+                        <p class="entry-date">10 Oct
+                            <span class="year">2015</span>
+                        </p>
                         <div id="QQ" class="entry-content">
-                            <p class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;學生莊英澔，出生於桃園市。父親從事服務業工作，母親則是家管，家裡除了父母之外，還有一位在工作的姊姊和一位大我一歲的哥哥，家中的教養態度向來都是採取民主的方式，希望我們養成獨立自主的習慣，因此從小父母尊重我的看法和決定，也給予我適時的協助，讓我有空間自主和負責。</p>
+                            <p class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我是莊英澔，出生於桃園市。父親從事服務業工作，母親則是家管，家裡除了父母之外，還有一位在工作的姊姊和一位大我一歲的哥哥，家中的教養態度向來都是採取民主的方式，希望我們養成獨立自主的習慣，因此從小父母尊重我的看法和決定，也給予我適時的協助，讓我有空間自主和負責。</p>
                             <p class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在求學的歷程中，選讀的科系與方向始終非常明確，因為從小就喜歡與電器有關的東西，時常把家裡的電器類的東西拆開來研究，升高中時，在自身的努力下考上龍潭農工電機科，在班上擔任過許多班級幹部，如:班長、學藝、衛生股長等等，對於學習處理事情的責任與態度和與人溝通協調的能力都成長了不少，除此之外，也製作單晶片微電腦自動控制繞線機之研製專題，在整體的專題製作規劃中，不僅統整高職三年所學的電機領域課程知識，也獲得了課本沒有教的知識，是製作專題時的額外收穫。</p>
                             <p class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高職畢業後我進入國立高雄應用科技大學電機工程系就讀，學校裡優秀的師資人才眾多，在課業方面我要求自己，各學科均衡發展，並保持應有的水準，入學期間受惠於系上教授的教導，歷年來每學期的學業總成績維持於前三名的水準上，就學期間以來得到六張書卷獎的鼓勵，也在資通組黃文祥教授的指導下，參與科技部104年度大專學生研究計畫「以hBeacon為基礎的銀髮族照護系統之研製
                                 - 老人跌倒通報為例」，以及由工研院與聯發科技(MediaTek Labs)共同主辦的「2015通訊大賽─聯發科技物聯網/穿戴式創客競賽」，雖然研究計畫的執行過程當中碰到了許多的難題，但並未削減我對這方面領域的興趣，更主動去借閱相關的專業書籍找尋解決方法，加上在微處理機課程中所學的程式設計經驗、計算機網路課程知識以及活用電子學實習所學的硬體電路製作，做進一步的研究與探討，並且透過同學間互相學習討論，能夠彙整出問題的不同解決方法，思考問題的最佳解答，從中磨練自己學習解決問題的能力，對於提升自己的思辨能力有很大的幫助。
-                                </p>
+                            </p>
                             <p class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;研究計畫執行過程中，不僅接觸到課業以外的知識，也讓我獲得許多解決問題的寶貴經驗，學習到以不同的角度去規劃系統的設計，每一次遇上的難題解決後所獲得的成就感與樂趣，更加深了我對此領域有進一步深造的動機。我的個性內斂謹慎，做事細心負責，在團體間的配合度高，容易得到同學與朋友間的信賴，凡事認真的聽別人講話，清楚對方想表達的意思，使我更具有親合力，並能圓滿的化解衝突。在高應大四年以來的日子，我廣泛的涉獵資訊相關領域的知識，努力打穩自己的基礎，未來更期許自己能夠擁有更專業的資訊長才，相信我積極向上、努力求學的心，能夠在求學路途中不斷成長突破。</p>
                         </div>
                         <div id="BMICal">
                             <label for="height">身高(公分): </label>
-                            <span style="color: Red;" id="hfield"></span><br />
-                            <input type="range" onclick="bmi(false)" name="height" id="height" value="170" min="100" max="200" step="1"><br />
+                            <span style="color: Red;" id="hfield"></span>
+                            <br />
+                            <input type="range" onclick="bmi(false)" name="height" id="height" value="170" min="100" max="200" step="1">
+                            <br />
                             <label for="weigt">體重(公斤): </label>
-                            <span style="color: Red;" id="wfield"></span><br />
-                            <input type="range" onclick="bmi(false)" name="weight" id="weight" value="60" min="30" max="120" step="1"><br />
+                            <span style="color: Red;" id="wfield"></span>
+                            <br />
+                            <input type="range" onclick="bmi(false)" name="weight" id="weight" value="60" min="30" max="120" step="1">
+                            <br />
                             <input type="button" onclick="bmi(true)" value="計算" />
                         </div>
                     </form>
@@ -348,58 +361,70 @@
                 <div class="widget" id="recent-entries">
                     <br />
                     <div>
-                        <span id="Slide" class="octicon octicon-git-compare"><b>&nbsp;Related Link</b></span>
+                        <span id="Slide" class="octicon octicon-git-compare">
+                            <b>&nbsp;Related Link</b>
+                        </span>
                     </div>
                     <br />
                     <ul class="KK">
                         <li>
                             <a href="http://www.kuas.edu.tw/bin/home.php">
-                                <img src="images/Kuas_png.png" alt="" width="60" height="60" /> National Kaohsiung University of Applied Sciences <span class="published">05 Jul 2015</span>
+                                <img src="images/Kuas_png.png" alt="" width="60" height="60" /> National Kaohsiung University of Applied Sciences
+                                <span class="published">05 Jul 2015</span>
                             </a>
                         </li>
                         <li>
                             <a href="http://github.com/kuas6678">
-                                <img src="images/entrypct_05.png" alt="" width="60" height="60" /> Explore GitHub <span class="published">06 Aug 2015</span>
+                                <img src="images/entrypct_05.png" alt="" width="60" height="60" /> Explore GitHub
+                                <span class="published">06 Aug 2015</span>
                             </a>
                         </li>
                         <li>
                             <a href="http://203.64.102.131/bmwlab">
-                                <img src="images/entrypct_04.png" alt="" width="60" height="60" /> Senior Care System <span class="published">10 Oct 2015</span>
+                                <img src="images/entrypct_04.png" alt="" width="60" height="60" /> Senior Care System
+                                <span class="published">10 Oct 2015</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://www.facebook.com/profile.php?id=100000654225811">
-                                <img src="images/entrypct_03.png" alt="" width="60" height="60" /> Facebook <span class="published">14 Jul 2009</span>
+                                <img src="images/entrypct_03.png" alt="" width="60" height="60" /> Facebook
+                                <span class="published">14 Jul 2009</span>
                             </a>
                         </li>
                         <li>
                             <a href="http://www.w3schools.com/">
-                                <img src="images/entrypct_02.jpg" alt="" width="60" height="60" /> W3Schools Online <span class="published">07 Jul 2015</span>
+                                <img src="images/entrypct_02.jpg" alt="" width="60" height="60" /> W3Schools Online
+                                <span class="published">07 Jul 2015</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://msdn.microsoft.com/zh-tw/vstudio/aa718325.aspx">
-                                <img src="images/entrypct_01.png" alt="" width="60" height="60" /> Visual Studio Msdn <span class="published">05 Jul 2015</span>
+                                <img src="images/entrypct_01.png" alt="" width="60" height="60" /> Visual Studio Msdn
+                                <span class="published">05 Jul 2015</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://social.msdn.microsoft.com/Forums/zh-TW/home">
-                                <img src="images/msdn_logo.png" alt="" width="60" height="60" /> Social Msdn <span class="published">05 Jul 2015</span>
+                                <img src="images/msdn_logo.png" alt="" width="60" height="60" /> Social Msdn
+                                <span class="published">05 Jul 2015</span>
                             </a>
                         </li>
                         <li>
                             <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
-                                <img src="images/Ieee-emblem.jpg" alt="" width="50" height="60" /> IEEE Xplore Digital Library <span class="published">05 Jul 2015</span>
+                                <img src="images/Ieee-emblem.jpg" alt="" width="50" height="60" /> IEEE Xplore Digital Library
+                                <span class="published">05 Jul 2015</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://nodejs.org/en/">
-                                <img src="images/node.png" alt="" width="60" height="60" /> Node.js <span class="published">06 Oct 2015</span>
+                                <img src="images/node.png" alt="" width="60" height="60" /> Node.js
+                                <span class="published">06 Oct 2015</span>
                             </a>
                         </li>
                         <li>
                             <a href="http://www.sharecourse.net/sharecourse/general/home/">
-                                <img src="images/mq1.png" alt="" width="60" height="60" /> ShareCourse <span class="published">06 Oct 2015</span>
+                                <img src="images/mq1.png" alt="" width="60" height="60" /> ShareCourse
+                                <span class="published">06 Oct 2015</span>
                             </a>
                         </li>
                     </ul>
@@ -412,7 +437,10 @@
                     $(document).ready(function() {
                         $('#KUAS').click(function() {
                             var Tags = null;
-                            Tags = total("C", "C++", "C#", "Python", "Java", "HTML5", "ASP.NET", "CSS", "MS SQL", "JavaScript", "Bootstrap", "XML", "JSON", "Ajax", "jQuery", "GitHub", "jQuery Mobile", "Node.js", "Android", "Arduino");
+                            Tags = total("C", "C++", "C#", "Python", "Java", "HTML5", "ASP.NET", "CSS",
+                                "MS SQL", "JavaScript", "Bootstrap", "XML", "JSON", "Ajax",
+                                "jQuery", "GitHub", "jQuery Mobile", "Node.js", "Android",
+                                "Arduino");
                             $("#BMWLAB h5 p").html(Tags + "<br/><br/>total: " + op);
                             // document.getElementById("ww").innerHTML = Tags;
                         });
@@ -421,41 +449,62 @@
                 <div class="widget" id="calendar">
                     <img src="images/Hao.jpg" alt="Smiley face" height="150" width="160">
                     <p id="Hao" style="text-align: center;" class="more">莊英澔</p>
-                    <div id="fadeInOut" align="center"><b>Ying Hao Chuang</b></div>
+                    <div id="fadeInOut" align="center">
+                        <b>Ying Hao Chuang</b>
+                    </div>
                     <div id="BMWLAB">
                         <br />
-                        <h5><a href="./kuaslocation.html" target="_blank">School: KUAS</a></h5>
+                        <h5>
+                            <a href="./kuaslocation.html" target="_blank">School: KUAS</a>
+                        </h5>
                         <h5>Email: kuas6678@gmail.com</h5>
                         <h5>
-                            Skill: <br />
-                            <p id="ww" style="text-align: center;">C、C++、C#、Java、HTML5、ASP.NET、CSS、MS SQL、JavaScript、Bootstrap、XML、JSON、Ajax、jQuery、GitHub、jQuery Mobile、Node.js、Android、Arduino</p>
+                            Skill:
+                            <br />
+                            <p id="ww" style="text-align: center;">C、C++、C#、Java、HTML5、ASP.NET、CSS、MS SQL、JavaScript、Bootstrap、XML、JSON、Ajax、jQuery、GitHub、jQuery Mobile、Node.js、Android、Arduino
+                            </p>
                         </h5>
                     </div>
-                    <h3><span id="span_date">Oct 2015</span>&nbsp;&nbsp;&nbsp;<span id="KUAS" class="mega-octicon octicon-home"></span></h3>
+                    <h3>
+                        <span id="span_date">Oct 2015</span>&nbsp;&nbsp;&nbsp;
+                        <span id="KUAS" class="mega-octicon octicon-home"></span>
+                    </h3>
                     <div style=" font-size: 14px;  font-weight: bold;" id="txt"></div>
                     <ul>
-                        <li><a href="#">01</a></li>
+                        <li>
+                            <a href="#">01</a>
+                        </li>
                         <li>02</li>
                         <li>03</li>
                         <li>04</li>
-                        <li class="sun"><a href="#">05</a></li>
+                        <li class="sun">
+                            <a href="#">05</a>
+                        </li>
                         <li>06</li>
-                        <li><a href="#">07</a></li>
+                        <li>
+                            <a href="#">07</a>
+                        </li>
                         <li>08</li>
                         <li>09</li>
                         <li>10</li>
                         <li>11</li>
                         <li class="sun">12</li>
                         <li>13</li>
-                        <li><a href="#">14</a></li>
+                        <li>
+                            <a href="#">14</a>
+                        </li>
                         <li>15</li>
                         <li>16</li>
-                        <li><a href="#">17</a></li>
+                        <li>
+                            <a href="#">17</a>
+                        </li>
                         <li>18</li>
                         <li class="sun">19</li>
                         <li class="sun">20</li>
                         <li>21</li>
-                        <li><a href="#">22</a></li>
+                        <li>
+                            <a href="#">22</a>
+                        </li>
                         <li>23</li>
                         <li>24</li>
                         <li>25</li>
@@ -468,7 +517,8 @@
                     </ul>
                     <br />
                     <form method="get" action="http://www.google.com.tw/custom" target="_blank">
-                        <span class="octicon octicon-search">站內搜尋:</span><br />
+                        <span class="octicon octicon-search">站內搜尋:</span>
+                        <br />
                         <input id="search" style="width: 94px; height: 18px;" placeholder="請輸入關鍵字" type="text" name="q" autocomplete="off" size="15">
                         <input type="submit" style="background-color: #0066FF; color: white;" class="border-radius" name="sa" value="搜尋">
                         <input type="hidden" name="http://203.64.102.234/kuas6678/home.html">
@@ -481,7 +531,10 @@
         </div>
         <div id="footer">
             <div id="footer-inner">
-                <address>Power by <a style="color: white; font-size: 13px; font-weight: bold; text-decoration:underline;" href="https://nodejs.org/en/" target="_blank">Node.js</a> WebServer<br />Copyright &copy; Ying Hao Chuang. All Rights Reserved.</address>
+                <address>Power by
+                    <a style="color: white; font-size: 13px; font-weight: bold; text-decoration:underline;" href="https://nodejs.org/en/"
+                        target="_blank">Node.js</a> WebServer
+                    <br />Copyright &copy; Ying Hao Chuang. All Rights Reserved.</address>
                 <!--/#footer-inner-->
             </div>
             <!--/#footer-->
